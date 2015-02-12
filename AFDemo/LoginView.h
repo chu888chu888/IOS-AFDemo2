@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GlobalUIView.h"
-@interface LoginView : GlobalUIView
+@interface LoginView : GlobalUIView<UITextFieldDelegate>
 @property (strong, nonatomic) UITextField *nameText;
 @property (strong, nonatomic) UITextField *passwordText;
 @property (strong, nonatomic) UIButton *loginBtn;

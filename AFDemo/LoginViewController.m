@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "AccountOperations.h"
 #import "User.h"
+#import "NoodleClient.h"
+#import "MBProgressHUD.h"
 @interface LoginViewController ()
 
 @end
@@ -26,6 +28,9 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
     self.title = @"登录";
+    [self.view.nameText becomeFirstResponder];
+    self.view.nameText.text=@"13145877854";
+    self.view.passwordText.text=@"888888";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,34 +48,79 @@
 }
 */
 
-#pragma mark 点击跳转操作
+#pragma mark 界面控件事件
 -(void)loginHandle {
-    AccountOperations *accountOperations=[AccountOperations new];
-    User *ModelStudent=[User new];
-    ModelStudent.userName=[self.view.nameText text];
-    ModelStudent.password=[self.view.passwordText text];
-    [accountOperations loginStudent:ModelStudent];
+    //首先获取access_token,之后拼接出Authorization,获取用户信息之后跳转
+    //需要找一个封装coreData的库,这样操作太麻烦了
+    
+   /*
+    NSDictionary *parameters = @{
+                                 @"grant_type" :@"password",
+                                 @"client_id" : @"ObpJAwJ7WP4s4Rwd",
+                                 @"client_secret" : @"WMv9vbYIFz8ugpwl6zDNThzn4KLoxLTV",
+                                 @"password" : self.view.passwordText.text,
+                                 @"username" : self.view.nameText.text
+                                 };
+    
+    [[NoodleClient sharedClient] POST:@"auth/access-token" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@",responseObject[@"access_token"]);
+        //拼接Authorization认证头
+        NSString *strAuthorization=[NSString stringWithFormat:@"%@ %@",@"Bearer",responseObject[@"access_token"]];
+
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error);
+        UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:@"提示:" message:@"登录失败!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [promptAlert show];
+    }];
+    */
+    
+    /*
+    [[NoodleClient sharedClient].requestSerializer setValue:@"Bearer 5kohZt9nZNVvxWbZWOEPjFslZNPwtcB5SMLNr0uA" forHTTPHeaderField:@"Authorization"];
+    
+    [[NoodleClient sharedClient] GET:@"user" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"userinfo:%@",responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"error:%@",error);
+    }];
+    */
+
+    
+    
+    
+    
+    /*
+    ConnectionFactory *connectionFactory = [[ConnectionFactory alloc] init];
+    ObjectRequestSuccess success = ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+        User *user = [mappingResult firstObject];
+        NSString *token = [NSString stringWithFormat:@"%@ %@",user.tokenType,user.accessToken];
+        [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"accessToken"];
+        [[NSUserDefaults standardUserDefaults] setObject:user.refreshToken  forKey:@"refreshToken"];
+        Connection *connection = [[Connection alloc] initWithAccessToken:token];
+        self.appDelegate.noodleApi = [connection getApi];
+        
+        [self getUserInfo];
+    };
+    
+    ObjectRequestFailure failue = ^(RKObjectRequestOperation *operation, NSError *error){
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:@"提示:" message:@"登录失败!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [promptAlert show];
+        
+        NSLog(@"%@", [[APIError alloc] initWithResponseError:error]);
+    };
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [connectionFactory createConnectionWithName:self.view.nameText.text andPassword:self.view.passwordText.text success:success failure:failue];
+     */
 }
 
 -(void)registerHandle{
-    AccountOperations *accountOperations=[AccountOperations new];
-    User *ModelStudent=[User new];
-    ModelStudent.userName=@"测11测试";
-    ModelStudent.password=@"445561155645";
-    ModelStudent.collegeId=153;
-    ModelStudent.phone=@"15195487648";
-    ModelStudent.gender=@"男";
-    ModelStudent.email=@"45515@qq.com";
-    ModelStudent.major=@"软件工程";
-    [accountOperations registerStudent:ModelStudent];
+    NSLog(@"注册");
 
 }
 
 -(void)findHandle{
-    //发送验证码
-    AccountOperations *accountOperations=[AccountOperations new];
-    //[accountOperations getRegisterCodeWithPhone:@"15895461348"];
-    [accountOperations checkRegisterCodeWithPhone:@"15895461348" andCode:@"1234"];
+    NSLog(@"忘记密码");
 }
 
 

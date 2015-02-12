@@ -19,6 +19,9 @@
     return  [ UIScreen mainScreen ].applicationFrame.size.height;
 }
 
++ (float) globalScreenHeight{
+    return [UIScreen mainScreen].bounds.size.height;
+}
 #pragma mark 设置 width / height
 - (void)setWidth:(CGFloat)width height:(CGFloat)height
 {
@@ -42,11 +45,20 @@
 }
 
 #pragma mark 移动位置（修改位置）
-- (void)moveHorizontal:(CGFloat)horizontal vertical:(CGFloat)vertical
+- (void)moveHorizontal:(CGFloat)horizontal vertical:(CGFloat)vertical animated:(BOOL)ifAnimate;
 {
     CGRect origionRect = self.frame;
     CGRect newRect = CGRectMake(origionRect.origin.x + horizontal, origionRect.origin.y + vertical, origionRect.size.width, origionRect.size.height);
-    self.frame = newRect;
+    if (ifAnimate) {
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             self.frame = newRect;
+                         }];
+        
+    }else{
+        self.frame = newRect;
+    }
+    
 }
 
 - (void)moveHorizontal:(CGFloat)horizontal vertical:(CGFloat)vertical addWidth:(CGFloat)widthAdded addHeight:(CGFloat)heightAdded

@@ -12,7 +12,7 @@
 
 + (float) globalWidth;
 + (float) globalHeight;
-
++ (float) globalScreenHeight;
 //设置 width / height
 
 - (void)setWidth:(CGFloat)width height:(CGFloat)height;
@@ -23,7 +23,7 @@
 
 //移动(修改位置)
 
-- (void)moveHorizontal:(CGFloat)horizontal vertical:(CGFloat)vertical;
+- (void)moveHorizontal:(CGFloat)horizontal vertical:(CGFloat)vertical animated:(BOOL)ifAnimate;
 
 - (void)moveHorizontal:(CGFloat)horizontal vertical:(CGFloat)vertical addWidth:(CGFloat)widthAdded addHeight:(CGFloat)heightAdded;
 
