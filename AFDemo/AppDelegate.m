@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "AFViewController.h"
+#import "AFNetworkActivityLogger.h"
 @interface AppDelegate ()
 
 @end
@@ -21,8 +22,12 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    //AFViewController *LoginVC=[[AFViewController alloc]init];
-    LoginViewController *LoginVC=[[LoginViewController alloc]init];
+    
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelOff];
+    
+    AFViewController *LoginVC=[[AFViewController alloc]init];
+    //LoginViewController *LoginVC=[[LoginViewController alloc]init];
     self.window.rootViewController=LoginVC;
     
     return YES;

@@ -50,10 +50,9 @@
 
 #pragma mark 界面控件事件
 -(void)loginHandle {
-    //首先获取access_token,之后拼接出Authorization,获取用户信息之后跳转
-    //需要找一个封装coreData的库,这样操作太麻烦了
     
-   /*
+    /*
+    //一段原生态实现登录的过程
     NSDictionary *parameters = @{
                                  @"grant_type" :@"password",
                                  @"client_id" : @"ObpJAwJ7WP4s4Rwd",
@@ -65,53 +64,24 @@
     [[NoodleClient sharedClient] POST:@"auth/access-token" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"%@",responseObject[@"access_token"]);
         //拼接Authorization认证头
-        NSString *strAuthorization=[NSString stringWithFormat:@"%@ %@",@"Bearer",responseObject[@"access_token"]];
-
+        NSString *strAuthorization=[NSString stringWithFormat:@"Bearer %@",responseObject[@"access_token"]];
+        NSLog(@"%@",strAuthorization);
+        //获取用户信息
+        [[NoodleClient sharedClient].requestSerializer setValue:strAuthorization forHTTPHeaderField:@"Authorization"];
+        
+        [[NoodleClient sharedClient] GET:@"user" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+            NSLog(@"userinfo:%@",responseObject);
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"error:%@",error);
+        }];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error);
         UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:@"提示:" message:@"登录失败!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [promptAlert show];
     }];
-    */
-    
-    /*
-    [[NoodleClient sharedClient].requestSerializer setValue:@"Bearer 5kohZt9nZNVvxWbZWOEPjFslZNPwtcB5SMLNr0uA" forHTTPHeaderField:@"Authorization"];
-    
-    [[NoodleClient sharedClient] GET:@"user" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"userinfo:%@",responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"error:%@",error);
-    }];
-    */
-
-    
-    
-    
-    
-    /*
-    ConnectionFactory *connectionFactory = [[ConnectionFactory alloc] init];
-    ObjectRequestSuccess success = ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
-        User *user = [mappingResult firstObject];
-        NSString *token = [NSString stringWithFormat:@"%@ %@",user.tokenType,user.accessToken];
-        [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"accessToken"];
-        [[NSUserDefaults standardUserDefaults] setObject:user.refreshToken  forKey:@"refreshToken"];
-        Connection *connection = [[Connection alloc] initWithAccessToken:token];
-        self.appDelegate.noodleApi = [connection getApi];
-        
-        [self getUserInfo];
-    };
-    
-    ObjectRequestFailure failue = ^(RKObjectRequestOperation *operation, NSError *error){
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:@"提示:" message:@"登录失败!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [promptAlert show];
-        
-        NSLog(@"%@", [[APIError alloc] initWithResponseError:error]);
-    };
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [connectionFactory createConnectionWithName:self.view.nameText.text andPassword:self.view.passwordText.text success:success failure:failue];
      */
+
 }
 
 -(void)registerHandle{
