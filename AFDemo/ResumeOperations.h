@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "GlobalOperations.h"
 @interface ResumeOperations : NSObject
--(void)get_recruitment_info;
-
+- (void)recruitment_info_Method:(void (^)(id returnDic,BOOL returnVal))completion;
+@property(nonatomic) id ReturnVal;
 @end

@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
-#import "AFViewController.h"
+#import "GlobalTimelineViewController.h"
+#import "AFNetworkActivityIndicatorManager.h"
 #import "AFNetworkActivityLogger.h"
+#import "AFViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,6 +19,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    /*
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
+    
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelOff];
+    
+    
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    UITableViewController *viewController = [[GlobalTimelineViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = self.navigationController;
+    [self.window makeKeyAndVisible];
+    
+    */
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -29,6 +52,8 @@
     AFViewController *LoginVC=[[AFViewController alloc]init];
     //LoginViewController *LoginVC=[[LoginViewController alloc]init];
     self.window.rootViewController=LoginVC;
+    
+    return YES;
     
     return YES;
 }

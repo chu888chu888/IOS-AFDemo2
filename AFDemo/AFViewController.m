@@ -14,6 +14,13 @@
 #import "NoodleClient.h"
 #import "AFHTTPRequestSerializer+OAuth2.h"
 #import "AFOAuth2Manager.h"
+#import "OAuth2Client.h"
+#import "ResumeOperations.h"
+#import "ResumePost.h"
+#import "Resume.h"
+
+
+
 @interface AFViewController ()
 @property(strong,nonatomic)NSString *returnJsonStr;
 @property(strong,nonatomic)NSString *returnAccessToken;
@@ -40,16 +47,25 @@
                                                  scope:@"student"
                                                success:^(AFOAuthCredential *credential) {
                                                    NSLog(@"Token: %@", credential.accessToken);
-                                                  
+                                                   
+                                                   //保存证书
+                                                   [AFOAuthCredential storeCredential:credential
+                                                                       withIdentifier:@"591mian"];
+                                                   
+                                                   //提取证书
+                                                   AFOAuthCredential *credential2 =
+                                                   [AFOAuthCredential retrieveCredentialWithIdentifier:@"591mian"];
+                                                   
                                                    AFHTTPRequestOperationManager *manager =
                                                    [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
-                                                 
-                                                   [manager.requestSerializer setAuthorizationHeaderFieldWithCredential:credential];
+                                                   
+                                                   [manager.requestSerializer setAuthorizationHeaderFieldWithCredential:credential2];
                                                    
                                                    [manager GET:@"recruitment_info?city=82"
                                                      parameters:nil
                                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                            NSLog(@"Success: %@", responseObject);
+                                                            NSLog(@"Success: %@", responseObject[@"data"][0]);
+                                                            NSLog(@"Success: %@", responseObject[@"data"][0][@"address"]);
                                                         }
                                                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                             NSLog(@"Failure: %@", error);
@@ -58,6 +74,31 @@
                                                failure:^(NSError *error) {
                                                    NSLog(@"Error: %@", error);
                                                }];
+}
+
+- (void)getrecruitment {
+    
+    
+    OAuth2Client *oauth=[OAuth2Client new];
+    [oauth GetAccessToken:@"13145877854" password:@"888888" :^(AFOAuthCredential *accesstoken, NSError *error) {
+        NSLog(@"证书:%@",accesstoken.accessToken);
+        
+        NSURL *baseURL = [NSURL URLWithString:@"http://121.42.51.177/"];
+        AFHTTPRequestOperationManager *manager =
+        [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
+        
+        [manager.requestSerializer setAuthorizationHeaderFieldWithCredential:accesstoken];
+        
+        [manager GET:@"recruitment_info?city=82"
+          parameters:nil
+             success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                 NSLog(@"Success: %@", responseObject[@"data"][0]);
+                 NSLog(@"Success: %@", responseObject[@"data"][0][@"address"]);
+             }
+             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                 NSLog(@"Failure: %@", error);
+             }];
+    }];
 }
 
 - (void)viewDidLoad {
@@ -83,10 +124,32 @@
     }];
      */
     
-    
     //[self GetAccessToken];
+    //[self getrecruitment];
+    
+    /*
+    ResumeOperations *resumeOP=[ResumeOperations new];
+    [resumeOP recruitment_info_Method:^(id returnDic, BOOL returnVal) {
+        if (returnVal) {
+            NSLog(@"返回值:%@",returnDic);
+        }
+        
+    }];
+     */
     
     
+   
+    [ResumePost globalTimelinePostsWithBlock:^(NSArray *posts, NSError *error) {
+        if (!error) {
+            NSLog(@"回传数据的大小%lu",(unsigned long)[posts count]);
+            for (Resume *tmp in posts) {
+                NSLog(@"地址信息:%@ 关键字信息:%@ 图片地址:%@",tmp.address,tmp.key_words,tmp.pic_url);
+            }
+        }
+    }];
+   
+    
+
     
 }
 - (void)didReceiveMemoryWarning {

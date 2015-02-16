@@ -8,6 +8,8 @@
 
 #import "AccountOperations.h"
 #import "AFNetworking.h"
+#import "User.h"
+
 @interface AccountOperations()
 @property(nonatomic)NSString *accesstoken;
 @end

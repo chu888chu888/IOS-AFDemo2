@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+@class User;
 @interface AccountOperations : NSObject
 //用户登录
 -(void)loginStudent:(User*) student;

@@ -2,14 +2,14 @@
 //  User.h
 //  AFDemo
 //
-//  Created by chuguangming on 15/2/9.
+//  Created by chuguangming on 15/2/16.
 //  Copyright (c) 2015年 chu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+extern NSString * const kUserProfileImageDidLoadNotification;
 
 @interface User : NSObject
-
 @property (nonatomic) NSString *grantType;
 @property (nonatomic) NSString *userName;
 @property (nonatomic) NSString *phone;
@@ -23,5 +23,11 @@
 @property (nonatomic) NSString *email;
 @property (nonatomic) NSInteger collegeId;
 @property (nonatomic) NSString *major;
+
+@property (readonly, nonatomic, assign) NSUInteger userID;
+@property (readonly, nonatomic, copy) NSString *username;
+@property (readonly, nonatomic, unsafe_unretained) NSURL *avatarImageURL;
+
+- (instancetype)initWithAttributes:(NSDictionary *)attributes;
 
 @end

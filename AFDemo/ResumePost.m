@@ -1,20 +1,18 @@
-//
-//  ResumeOperations.m
-//  AFDemo
-//
-//  Created by chuguangming on 15/2/10.
-//  Copyright (c) 2015年 chu. All rights reserved.
-//
-
+#import "ResumePost.h"
+#import "Resume.h"
 #import "ResumeOperations.h"
-#import "AFNetworking.h"
 #import "OAuth2Client.h"
-#import "AFHTTPSessionManager.h"
-#import "OAuth2Client.h"
-@implementation ResumeOperations
-@synthesize ReturnVal;
-//请求宣讲会方法
-- (void)recruitment_info_Method:(void (^)(id returnDic,BOOL returnVal))completion {
+@implementation ResumePost
+-(instancetype)initWithAttributes:(NSDictionary *)attributes
+{
+    self=[super init];
+    if (!self) {
+        return nil;
+    }
+    return self;
+}
++(void)globalTimelinePostsWithBlock:(void (^)(NSArray *posts, NSError *))block
+{
     OAuth2Client *oauth=[OAuth2Client new];
     [oauth GetAccessToken:@"13145877854" password:@"888888" :^(AFOAuthCredential *accesstoken, NSError *error) {
         NSLog(@"证书:%@",accesstoken.accessToken);
@@ -30,18 +28,26 @@
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
                  //NSLog(@"Success: %@", responseObject[@"data"][0]);
                  //NSLog(@"Success: %@", responseObject[@"data"][0][@"address"]);
-                 if (completion) {
-                     completion(responseObject,true);
+
+                 NSArray *postsFromResponse = responseObject[@"data"];
+                 NSMutableArray *mutablePosts = [NSMutableArray arrayWithCapacity:[postsFromResponse count]];
+                 for (NSDictionary *attributes in postsFromResponse) {
+                     Resume *resume = [[Resume alloc] initWithAttributes:attributes];
+                     [mutablePosts addObject:resume];
                  }
+                 
+                 if (block) {
+                     block([NSArray arrayWithArray:mutablePosts], nil);
+                 }
+                 
                  
              }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                  NSLog(@"Failure: %@", error);
-                 if (completion) {
-                     completion(nil,false);
+                 if (block) {
+                     block(nil,error);
                  }
              }];
     }];
 }
-
 @end

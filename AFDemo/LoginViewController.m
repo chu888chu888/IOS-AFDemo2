@@ -11,6 +11,8 @@
 #import "User.h"
 #import "NoodleClient.h"
 #import "MBProgressHUD.h"
+#import "AFHTTPRequestSerializer+OAuth2.h"
+#import "AFOAuth2Manager.h"
 @interface LoginViewController ()
 
 @end
@@ -80,6 +82,47 @@
         UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:@"提示:" message:@"登录失败!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [promptAlert show];
     }];
+     */
+    
+    /*
+    NSURL *baseURL = [NSURL URLWithString:@"http://121.42.51.177/"];
+    AFOAuth2Manager *OAuth2Manager =
+    [[AFOAuth2Manager alloc] initWithBaseURL:baseURL
+                                    clientID:@"ObpJAwJ7WP4s4Rwd"
+                                      secret:@"WMv9vbYIFz8ugpwl6zDNThzn4KLoxLTV"];
+    
+    [OAuth2Manager authenticateUsingOAuthWithURLString:@"auth/access-token"
+                                              username:@"13145877854"
+                                              password:@"888888"
+                                                 scope:@"student"
+                                               success:^(AFOAuthCredential *credential) {
+                                                   NSLog(@"Token: %@", credential.accessToken);
+                                                   
+                                                   //保存证书
+                                                   [AFOAuthCredential storeCredential:credential
+                                                                       withIdentifier:@"591mian"];
+                                                   
+                                                   //提取证书
+                                                   AFOAuthCredential *credential2 =
+                                                   [AFOAuthCredential retrieveCredentialWithIdentifier:@"591mian"];
+                                                   
+                                                   AFHTTPRequestOperationManager *manager =
+                                                   [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
+                                                   
+                                                   [manager.requestSerializer setAuthorizationHeaderFieldWithCredential:credential2];
+                                                   
+                                                   [manager GET:@"recruitment_info?city=82"
+                                                     parameters:nil
+                                                        success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                            NSLog(@"Success: %@", responseObject);
+                                                        }
+                                                        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                            NSLog(@"Failure: %@", error);
+                                                        }];
+                                               }
+                                               failure:^(NSError *error) {
+                                                   NSLog(@"Error: %@", error);
+                                               }];
      */
 
 }

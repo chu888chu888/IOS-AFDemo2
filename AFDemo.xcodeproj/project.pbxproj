@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B90944631A8B408500344FB2 /* NoodleClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B90944621A8B408500344FB2 /* NoodleClient.m */; };
+		B90BEB771A9192FA0067D510 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB761A9192FA0067D510 /* User.m */; };
+		B90BEB7A1A9195950067D510 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB791A9195950067D510 /* Post.m */; };
+		B90BEB7D1A9195C00067D510 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB7B1A9195C00067D510 /* PostTableViewCell.m */; };
+		B90BEB801A9195E10067D510 /* GlobalTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB7F1A9195E10067D510 /* GlobalTimelineViewController.m */; };
+		B90BEB831A9196140067D510 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB821A9196140067D510 /* AFAppDotNetAPIClient.m */; };
+		B90BEB861A91A69C0067D510 /* OAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB851A91A69C0067D510 /* OAuth2Client.m */; };
+		B90BEB891A91C40B0067D510 /* Resume.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB881A91C40B0067D510 /* Resume.m */; };
+		B90BEB8C1A91C6A20067D510 /* ResumePost.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB8B1A91C6A20067D510 /* ResumePost.m */; };
 		B92E56441A84B2D100111D8E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B92E56431A84B2D100111D8E /* LoginViewController.m */; };
 		B92E56471A84B40B00111D8E /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92E56461A84B40B00111D8E /* LoginView.m */; };
 		B92E564A1A84B45900111D8E /* GlobalUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92E56491A84B45900111D8E /* GlobalUIView.m */; };
@@ -33,7 +41,6 @@
 		B94613E01A8353F100882EF0 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B94613D51A8353F100882EF0 /* JSONKeyMapper.m */; };
 		B94613E11A8353F100882EF0 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = B94613D71A8353F100882EF0 /* JSONValueTransformer.m */; };
 		B94613E31A83545000882EF0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94613E21A83545000882EF0 /* SystemConfiguration.framework */; };
-		B9515B441A889BA000CD32C6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B9515B431A889BA000CD32C6 /* User.m */; };
 		B96CA43B1A820BB2001DB947 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CA43A1A820BB2001DB947 /* main.m */; };
 		B96CA43E1A820BB2001DB947 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96CA43D1A820BB2001DB947 /* AppDelegate.m */; };
 		B96CA4411A820BB2001DB947 /* AFDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B96CA43F1A820BB2001DB947 /* AFDemo.xcdatamodeld */; };
@@ -96,6 +103,22 @@
 /* Begin PBXFileReference section */
 		B90944611A8B408500344FB2 /* NoodleClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleClient.h; sourceTree = "<group>"; };
 		B90944621A8B408500344FB2 /* NoodleClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleClient.m; sourceTree = "<group>"; };
+		B90BEB751A9192FA0067D510 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B90BEB761A9192FA0067D510 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		B90BEB781A9195950067D510 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		B90BEB791A9195950067D510 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		B90BEB7B1A9195C00067D510 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
+		B90BEB7C1A9195C00067D510 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		B90BEB7E1A9195E10067D510 /* GlobalTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalTimelineViewController.h; sourceTree = "<group>"; };
+		B90BEB7F1A9195E10067D510 /* GlobalTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalTimelineViewController.m; sourceTree = "<group>"; };
+		B90BEB811A9196140067D510 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
+		B90BEB821A9196140067D510 /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
+		B90BEB841A91A69C0067D510 /* OAuth2Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth2Client.h; sourceTree = "<group>"; };
+		B90BEB851A91A69C0067D510 /* OAuth2Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuth2Client.m; sourceTree = "<group>"; };
+		B90BEB871A91C40B0067D510 /* Resume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resume.h; sourceTree = "<group>"; };
+		B90BEB881A91C40B0067D510 /* Resume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resume.m; sourceTree = "<group>"; };
+		B90BEB8A1A91C6A20067D510 /* ResumePost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumePost.h; sourceTree = "<group>"; };
+		B90BEB8B1A91C6A20067D510 /* ResumePost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumePost.m; sourceTree = "<group>"; };
 		B92E56421A84B2D100111D8E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B92E56431A84B2D100111D8E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B92E56451A84B40B00111D8E /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -144,8 +167,6 @@
 		B94613D61A8353F100882EF0 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		B94613D71A8353F100882EF0 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		B94613E21A83545000882EF0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B9515B421A889BA000CD32C6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		B9515B431A889BA000CD32C6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		B96CA4351A820BB2001DB947 /* AFDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96CA4391A820BB2001DB947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96CA43A1A820BB2001DB947 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -271,6 +292,8 @@
 		B92E563E1A84B17F00111D8E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B90BEB7B1A9195C00067D510 /* PostTableViewCell.m */,
+				B90BEB7C1A9195C00067D510 /* PostTableViewCell.h */,
 				B92E56451A84B40B00111D8E /* LoginView.h */,
 				B92E56461A84B40B00111D8E /* LoginView.m */,
 				B92E56481A84B45900111D8E /* GlobalUIView.h */,
@@ -282,6 +305,8 @@
 		B92E563F1A84B18700111D8E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B90BEB7E1A9195E10067D510 /* GlobalTimelineViewController.h */,
+				B90BEB7F1A9195E10067D510 /* GlobalTimelineViewController.m */,
 				B92E56421A84B2D100111D8E /* LoginViewController.h */,
 				B92E56431A84B2D100111D8E /* LoginViewController.m */,
 			);
@@ -291,8 +316,14 @@
 		B92E56401A84B19500111D8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B9515B421A889BA000CD32C6 /* User.h */,
-				B9515B431A889BA000CD32C6 /* User.m */,
+				B90BEB781A9195950067D510 /* Post.h */,
+				B90BEB791A9195950067D510 /* Post.m */,
+				B90BEB751A9192FA0067D510 /* User.h */,
+				B90BEB761A9192FA0067D510 /* User.m */,
+				B90BEB871A91C40B0067D510 /* Resume.h */,
+				B90BEB881A91C40B0067D510 /* Resume.m */,
+				B90BEB8A1A91C6A20067D510 /* ResumePost.h */,
+				B90BEB8B1A91C6A20067D510 /* ResumePost.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -345,8 +376,12 @@
 			isa = PBXGroup;
 			children = (
 				B92E566F1A84BBF000111D8E /* Operations */,
+				B90BEB811A9196140067D510 /* AFAppDotNetAPIClient.h */,
+				B90BEB821A9196140067D510 /* AFAppDotNetAPIClient.m */,
 				B90944611A8B408500344FB2 /* NoodleClient.h */,
 				B90944621A8B408500344FB2 /* NoodleClient.m */,
+				B90BEB841A91A69C0067D510 /* OAuth2Client.h */,
+				B90BEB851A91A69C0067D510 /* OAuth2Client.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -719,6 +754,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B90BEB771A9192FA0067D510 /* User.m in Sources */,
 				B92E564A1A84B45900111D8E /* GlobalUIView.m in Sources */,
 				B94613DE1A8353F100882EF0 /* JSONHTTPClient.m in Sources */,
 				B90944631A8B408500344FB2 /* NoodleClient.m in Sources */,
@@ -727,16 +763,18 @@
 				B96CA46F1A820BC8001DB947 /* UIAlertView+AFNetworking.m in Sources */,
 				B96CA46D1A820BC8001DB947 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				B9E3B3781A8C7B5D00911FBC /* MBProgressHUD.m in Sources */,
+				B90BEB861A91A69C0067D510 /* OAuth2Client.m in Sources */,
 				B99D982A1A8C8DC8003E1B9F /* AFHTTPRequestSerializer+OAuth2.m in Sources */,
+				B90BEB891A91C40B0067D510 /* Resume.m in Sources */,
 				B96CA4731A820BC8001DB947 /* UIRefreshControl+AFNetworking.m in Sources */,
 				B96CA4941A820C05001DB947 /* AFViewController.m in Sources */,
 				B94613D91A8353F100882EF0 /* JSONModelArray.m in Sources */,
 				B94613DC1A8353F100882EF0 /* NSArray+JSONModel.m in Sources */,
 				B96CA4701A820BC8001DB947 /* UIButton+AFNetworking.m in Sources */,
 				B96CA4911A820BD7001DB947 /* AFURLSessionManager.m in Sources */,
-				B9515B441A889BA000CD32C6 /* User.m in Sources */,
 				B94613D81A8353F100882EF0 /* JSONModel.m in Sources */,
 				B92E565F1A84B4CF00111D8E /* UIFont+Base.m in Sources */,
+				B90BEB7D1A9195C00067D510 /* PostTableViewCell.m in Sources */,
 				B96CA48B1A820BD7001DB947 /* AFHTTPSessionManager.m in Sources */,
 				B96CA4711A820BC8001DB947 /* UIImageView+AFNetworking.m in Sources */,
 				B92E566A1A84B59700111D8E /* readme.markdown in Sources */,
@@ -759,11 +797,15 @@
 				B92E565E1A84B4CF00111D8E /* UIColor+Base.m in Sources */,
 				B94613E11A8353F100882EF0 /* JSONValueTransformer.m in Sources */,
 				B96CA4721A820BC8001DB947 /* UIProgressView+AFNetworking.m in Sources */,
+				B90BEB801A9195E10067D510 /* GlobalTimelineViewController.m in Sources */,
 				B94613E01A8353F100882EF0 /* JSONKeyMapper.m in Sources */,
 				B96CA46E1A820BC8001DB947 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				B99D982B1A8C8DC8003E1B9F /* AFOAuth2Manager.m in Sources */,
+				B90BEB8C1A91C6A20067D510 /* ResumePost.m in Sources */,
 				B96CA48D1A820BD7001DB947 /* AFSecurityPolicy.m in Sources */,
 				B96CA43E1A820BB2001DB947 /* AppDelegate.m in Sources */,
+				B90BEB831A9196140067D510 /* AFAppDotNetAPIClient.m in Sources */,
+				B90BEB7A1A9195950067D510 /* Post.m in Sources */,
 				B96CA4411A820BB2001DB947 /* AFDemo.xcdatamodeld in Sources */,
 				B92E56601A84B4CF00111D8E /* UILabel+Base.m in Sources */,
 				B92E56751A84BC5A00111D8E /* AccountOperations.m in Sources */,
