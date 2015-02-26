@@ -60,14 +60,46 @@ static NSString *const CredentialIdentifier=@"591mian";
     }
     else
     {
-
-            //直接返回保存的accesstoken
-            //提取证书
-            AFOAuthCredential *returncredential =
+        
+        AFOAuthCredential *returncredential =
             [AFOAuthCredential retrieveCredentialWithIdentifier:CredentialIdentifier];
+        if (returncredential.isExpired) {
+            //证书过期了
+            AFOAuth2Manager *OAuth2Manager =
+            [[AFOAuth2Manager alloc] initWithBaseURL:baseURL
+                                            clientID:@"ObpJAwJ7WP4s4Rwd"
+                                              secret:@"WMv9vbYIFz8ugpwl6zDNThzn4KLoxLTV"];
+            
+            [OAuth2Manager authenticateUsingOAuthWithURLString:@"auth/access-token"
+                                                      username:username
+                                                      password:password
+                                                         scope:@"student"
+                                                       success:^(AFOAuthCredential *credential) {
+                                                           
+                                                           AccessToken=credential;
+                                                           //保存accesstoken
+                                                           [AFOAuthCredential storeCredential:credential
+                                                                               withIdentifier:CredentialIdentifier];
+                                                           if (block) {
+                                                               block(AccessToken, nil);
+                                                           }
+                                                           
+                                                       }
+                                                       failure:^(NSError *error) {
+                                                           if (block) {
+                                                               NSLog(@"Error: %@", error);
+                                                               block(nil,error);
+                                                           }
+                                                           
+                                                       }];
+        }
+        else
+        {
             if (block) {
                 block(returncredential, nil);
             }
+        }
+
     }
     
 }

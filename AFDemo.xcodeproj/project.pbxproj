@@ -16,6 +16,7 @@
 		B90BEB861A91A69C0067D510 /* OAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB851A91A69C0067D510 /* OAuth2Client.m */; };
 		B90BEB891A91C40B0067D510 /* Resume.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB881A91C40B0067D510 /* Resume.m */; };
 		B90BEB8C1A91C6A20067D510 /* ResumePost.m in Sources */ = {isa = PBXBuildFile; fileRef = B90BEB8B1A91C6A20067D510 /* ResumePost.m */; };
+		B91C53101A9ECA9B00170E70 /* GetRecruitmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B91C530F1A9ECA9B00170E70 /* GetRecruitmentTableViewController.m */; };
 		B92E56441A84B2D100111D8E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B92E56431A84B2D100111D8E /* LoginViewController.m */; };
 		B92E56471A84B40B00111D8E /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92E56461A84B40B00111D8E /* LoginView.m */; };
 		B92E564A1A84B45900111D8E /* GlobalUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92E56491A84B45900111D8E /* GlobalUIView.m */; };
@@ -27,8 +28,6 @@
 		B92E56681A84B59700111D8E /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92E56651A84B59700111D8E /* CSLinearLayoutView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B92E56691A84B59700111D8E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B92E56661A84B59700111D8E /* LICENSE */; };
 		B92E566A1A84B59700111D8E /* readme.markdown in Sources */ = {isa = PBXBuildFile; fileRef = B92E56671A84B59700111D8E /* readme.markdown */; };
-		B92E56721A84BC4A00111D8E /* GlobalOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = B92E56711A84BC4A00111D8E /* GlobalOperations.m */; };
-		B92E56751A84BC5A00111D8E /* AccountOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = B92E56741A84BC5A00111D8E /* AccountOperations.m */; };
 		B94608261A8C9D1700494A9A /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B94608251A8C9D1700494A9A /* AFNetworkActivityLogger.m */; };
 		B94613D81A8353F100882EF0 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B94613C11A8353F100882EF0 /* JSONModel.m */; };
 		B94613D91A8353F100882EF0 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B94613C31A8353F100882EF0 /* JSONModelArray.m */; };
@@ -119,6 +118,8 @@
 		B90BEB881A91C40B0067D510 /* Resume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resume.m; sourceTree = "<group>"; };
 		B90BEB8A1A91C6A20067D510 /* ResumePost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumePost.h; sourceTree = "<group>"; };
 		B90BEB8B1A91C6A20067D510 /* ResumePost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumePost.m; sourceTree = "<group>"; };
+		B91C530E1A9ECA9B00170E70 /* GetRecruitmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetRecruitmentTableViewController.h; sourceTree = "<group>"; };
+		B91C530F1A9ECA9B00170E70 /* GetRecruitmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetRecruitmentTableViewController.m; sourceTree = "<group>"; };
 		B92E56421A84B2D100111D8E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B92E56431A84B2D100111D8E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B92E56451A84B40B00111D8E /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -139,10 +140,6 @@
 		B92E56651A84B59700111D8E /* CSLinearLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutView.m; sourceTree = "<group>"; };
 		B92E56661A84B59700111D8E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B92E56671A84B59700111D8E /* readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.markdown; sourceTree = "<group>"; };
-		B92E56701A84BC4A00111D8E /* GlobalOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalOperations.h; sourceTree = "<group>"; };
-		B92E56711A84BC4A00111D8E /* GlobalOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalOperations.m; sourceTree = "<group>"; };
-		B92E56731A84BC5A00111D8E /* AccountOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountOperations.h; sourceTree = "<group>"; };
-		B92E56741A84BC5A00111D8E /* AccountOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountOperations.m; sourceTree = "<group>"; };
 		B94608241A8C9D1700494A9A /* AFNetworkActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityLogger.h; sourceTree = "<group>"; };
 		B94608251A8C9D1700494A9A /* AFNetworkActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityLogger.m; sourceTree = "<group>"; };
 		B94613C01A8353F100882EF0 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
@@ -309,6 +306,8 @@
 				B90BEB7F1A9195E10067D510 /* GlobalTimelineViewController.m */,
 				B92E56421A84B2D100111D8E /* LoginViewController.h */,
 				B92E56431A84B2D100111D8E /* LoginViewController.m */,
+				B91C530E1A9ECA9B00170E70 /* GetRecruitmentTableViewController.h */,
+				B91C530F1A9ECA9B00170E70 /* GetRecruitmentTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -389,10 +388,6 @@
 		B92E566F1A84BBF000111D8E /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				B92E56701A84BC4A00111D8E /* GlobalOperations.h */,
-				B92E56711A84BC4A00111D8E /* GlobalOperations.m */,
-				B92E56731A84BC5A00111D8E /* AccountOperations.h */,
-				B92E56741A84BC5A00111D8E /* AccountOperations.m */,
 				B9B5C3EE1A89FA2500A19170 /* ResumeOperations.h */,
 				B9B5C3EF1A89FA2500A19170 /* ResumeOperations.m */,
 			);
@@ -757,6 +752,7 @@
 				B90BEB771A9192FA0067D510 /* User.m in Sources */,
 				B92E564A1A84B45900111D8E /* GlobalUIView.m in Sources */,
 				B94613DE1A8353F100882EF0 /* JSONHTTPClient.m in Sources */,
+				B91C53101A9ECA9B00170E70 /* GetRecruitmentTableViewController.m in Sources */,
 				B90944631A8B408500344FB2 /* NoodleClient.m in Sources */,
 				B96CA4891A820BD7001DB947 /* AFHTTPRequestOperation.m in Sources */,
 				B94613DF1A8353F100882EF0 /* JSONModel+networking.m in Sources */,
@@ -793,7 +789,6 @@
 				B94613DD1A8353F100882EF0 /* JSONAPI.m in Sources */,
 				B94608261A8C9D1700494A9A /* AFNetworkActivityLogger.m in Sources */,
 				B92E56471A84B40B00111D8E /* LoginView.m in Sources */,
-				B92E56721A84BC4A00111D8E /* GlobalOperations.m in Sources */,
 				B92E565E1A84B4CF00111D8E /* UIColor+Base.m in Sources */,
 				B94613E11A8353F100882EF0 /* JSONValueTransformer.m in Sources */,
 				B96CA4721A820BC8001DB947 /* UIProgressView+AFNetworking.m in Sources */,
@@ -808,7 +803,6 @@
 				B90BEB7A1A9195950067D510 /* Post.m in Sources */,
 				B96CA4411A820BB2001DB947 /* AFDemo.xcdatamodeld in Sources */,
 				B92E56601A84B4CF00111D8E /* UILabel+Base.m in Sources */,
-				B92E56751A84BC5A00111D8E /* AccountOperations.m in Sources */,
 				B9E3B3791A8C7B5D00911FBC /* README.mdown in Sources */,
 				B96CA43B1A820BB2001DB947 /* main.m in Sources */,
 				B92E56611A84B4CF00111D8E /* UIView+Base.m in Sources */,

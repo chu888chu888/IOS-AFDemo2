@@ -11,6 +11,7 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "AFNetworkActivityLogger.h"
 #import "AFViewController.h"
+#import "GetRecruitmentTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -39,8 +40,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
-    
+        return YES;
     */
+    
+    /*
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -54,8 +57,28 @@
     self.window.rootViewController=LoginVC;
     
     return YES;
+     */
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
     
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelOff];
+    
+    
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    UITableViewController *viewController = [[GetRecruitmentTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = self.navigationController;
+    [self.window makeKeyAndVisible];
     return YES;
+    
+    
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -9,7 +9,7 @@
 #import "Resume.h"
 #import "AFHTTPRequestOperation.h"
 @implementation Resume
-@synthesize address,key_words,pic_url;
+@synthesize address,key_words,pic_url,enterprise_name;
 - (instancetype)initWithAttributes:(NSDictionary *)attributes {
     self = [super init];
     if (!self) {
@@ -19,6 +19,7 @@
     self.address =[attributes valueForKeyPath:@"address"];
     self.key_words = [attributes valueForKeyPath:@"key_words"];
     self.pic_url = [attributes valueForKeyPath:@"pic_url"];
+    self.enterprise_name=[attributes valueForKeyPath:@"enterprise_name"];
     
     return self;
 }

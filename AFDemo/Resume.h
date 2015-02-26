@@ -11,7 +11,8 @@
 @interface Resume : NSObject
 @property(nonatomic) NSString *address;
 @property(nonatomic) NSString *key_words;
-@property ( nonatomic, ) NSString *pic_url;
+@property (nonatomic) NSString *pic_url;
+@property(nonatomic) NSString *enterprise_name;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 @end
